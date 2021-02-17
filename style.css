@@ -1,0 +1,92 @@
+@import "css/fonts.css";
+
+/* General */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'HelveticaNeue', sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1200px;
+    min-width: 320px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* General end */
+
+/* Header */
+
+.header {
+    background: #fff;
+    width: 100%;
+    padding: 15px 0;
+    position: relative;
+}
+
+.header::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(270deg, #7E00E8 0%, #FF1876 54.17%, #BB0CB2 100%);
+    position: absolute;
+    bottom: 0;
+}
+
+.title {
+    color: #5A1094;
+    font-weight: 400;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.logo-title {
+    display: flex;
+    width: 70%;
+    align-items: center;
+}
+
+.cart {
+    display: flex;
+    align-items: flex-end;
+}
+
+.cart-text {
+    color: #C90EA5;
+    font-size: 15px;
+    line-height: 13px;
+    margin-right: 5px;
+}
+
+.cart-icon {
+    position: relative;
+}
+
+.cart-items-count {
+    font-size: 9px;
+    line-height: 11px;
+    background: #FF1876;
+    color: #fff;
+    width: 14px;
+    height: 14px;
+    display: flex;
+    border-radius: 37px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+
+.cart-icon-img {
+    display: block;
+}
+
+/* Header end */
