@@ -28,12 +28,116 @@
     <div class="form-container container">
         <div class="form-content">
             <div class="form-nav">
-
+                <ul class="form-nav-list">
+                    <li class="font-purple">Shipping</li>
+                    <li>Billing</li>
+                    <li>Payment</li>
+                </ul>
             </div>
-            <form>
-                <div class="shipping-info"></div>
-                <div class="billing-info"></div>
-                <div class="payment"></div>
+            <form class="form-slides">
+                <div class="form-slide shipping-info">
+                    <div class="form-slide-title">
+                        <span class="form-slide-title-text font-purple">Shipping Info</span>
+                    </div>
+                    <div class="fieldset">
+                        <div class="fieldset-title font-purple">
+                            Recipient
+                        </div>
+                        <div class="input-container">
+                            <input type="text"
+                                   name="full-name"
+                                   class="input-field input-required"
+                                   placeholder="Full Name"
+                                   title="Full Name"
+                            >
+                            <p class="input-tooltip">
+                                Please enter recipient full name
+                            </p>
+                        </div>
+                        <div class="input-container">
+                            <input type="text"
+                                   name="daytime-phone"
+                                   class="input-field input-required"
+                                   placeholder="Daytime Phone"
+                                   title="Daytime Phone"
+                            >
+                            <p class="input-label">For delivery<br>questions only</p>
+                            <p class="input-tooltip">
+                                Please enter recipient daytime phone
+                            </p>
+                        </div>
+                    </div>
+                    <div class="fieldset">
+                        <div class="fieldset-title font-purple">
+                            Address
+                        </div>
+                        <div class="input-container">
+                            <input type="text"
+                                   name="street-address"
+                                   class="input-field input-required"
+                                   placeholder="Street Address"
+                                   title="Street Address"
+                            >
+                            <p class="input-tooltip">
+                                Please enter shipping street address
+                            </p>
+                        </div>
+                        <div class="input-container">
+                            <input type="text"
+                                   name="apt"
+                                   class="input-field"
+                                   placeholder="Apt, Suite, Bldg, Gate Code. (optional)"
+                                   title="Apt, Suite, Bldg, Gate Code. (optional)"
+                            >
+                        </div>
+                        <div class="input-container">
+                            <input type="text"
+                                   name="city"
+                                   class="input-field input-required"
+                                   placeholder="City"
+                                   title="City"
+                            >
+                            <img src="images/city-target.svg" alt="" class="input-img">
+                            <p class="input-tooltip">
+                                Please enter shipping city
+                            </p>
+                        </div>
+                        <div class="inputs-row">
+                            <div class="input-container">
+                                <select name="country"
+                                        class="input-field input-required"
+                                        title="Country"
+                                >
+                                    <option disabled selected>Country</option>
+                                </select>
+                                <img src="images/bottom-arrow.svg" alt="" class="input-img">
+                                <p class="input-tooltip">
+                                    Please enter shipping country
+                                </p>
+                            </div>
+                            <div class="input-container input-row-small">
+                                <input type="text"
+                                       name="zip"
+                                       class="input-field input-required"
+                                       placeholder="ZIP"
+                                       title="ZIP"
+                                >
+                                <p class="input-tooltip">
+                                    Please enter shipping ZIP
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-slide-button">
+                        <button type="button" class="btn">Continue</button>
+                    </div>
+                </div>
+                <div class="form-slide billing-info visible">
+                    <div class="form-slide-title">
+                        <span class="form-slide-title-text font-purple">Billing Info</span>
+                    </div>
+                </div>
+                <div class="form-slide payment"></div>
             </form>
         </div>
         <div class="order-content">
