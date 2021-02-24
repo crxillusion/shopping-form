@@ -8,6 +8,10 @@
     font-family: 'HelveticaNeue', sans-serif;
 }
 
+body {
+    background: #E6E9F0;
+}
+
 a {
     color: inherit;
 }
@@ -305,6 +309,20 @@ a {
 .form-slide-title-text {
     font-size: 26px;
     line-height: 31px;
+}
+
+.form-slide-title a {
+    text-decoration-color: #979797;
+    font-weight: 500;
+}
+
+.form-slide-description {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    line-height: 18px;
+    color: #6B6B6B;
+    margin: 15px 0;
 }
 
 /* Form Slides */

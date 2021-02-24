@@ -35,7 +35,7 @@
                 </ul>
             </div>
             <form class="form-slides">
-                <div class="form-slide shipping-info">
+                <div class="form-slide shipping-info visible">
                     <div class="form-slide-title">
                         <span class="form-slide-title-text font-purple">Shipping Info</span>
                     </div>
@@ -132,12 +132,120 @@
                         <button type="button" class="btn">Continue</button>
                     </div>
                 </div>
-                <div class="form-slide billing-info visible">
+                <div class="form-slide billing-info ">
                     <div class="form-slide-title">
-                        <span class="form-slide-title-text font-purple">Billing Info</span>
+                        <span class="form-slide-title-text font-purple">Billing Information</span>
+                        <a href="#" class="title-link font-purple">Same as shipping</a>
+                    </div>
+                    <div class="fieldset">
+                        <div class="fieldset-title font-purple">
+                            Billing Contact
+                        </div>
+                        <div class="input-container">
+                            <input type="text" name="full-name" class="input-field input-required"
+                                   placeholder="Full Name" title="Full Name">
+                            <p class="input-tooltip">Please enter recipient full name</p>
+                        </div>
+                        <div class="input-container">
+                            <input type="email" name="email-address" class="input-field input-required"
+                                   placeholder="Email Address" title="Email Address">
+                            <p class="input-tooltip">Please enter recipient email address</p>
+                        </div>
+                    </div>
+                    <div class="fieldset">
+                        <div class="fieldset-title font-purple">
+                            Billing Address
+                        </div>
+                        <div class="input-container">
+                            <input type="text" name="street-address" class="input-field input-required"
+                                   placeholder="Street Address" title="Street Address">
+                            <p class="input-tooltip">Please enter shipping street address</p>
+                        </div>
+                        <div class="input-container">
+                            <input type="text" name="apt" class="input-field"
+                                   placeholder="Apt, Suite, Bldg, Gate Code. (optional)"
+                                   title="Apt, Suite, Bldg, Gate Code. (optional)">
+                        </div>
+                        <div class="input-container">
+                            <input type="text" name="city" class="input-field input-required" placeholder="City"
+                                   title="City">
+                            <img src="images/city-target.svg" alt="" class="input-img">
+                            <p class="input-tooltip">Please enter shipping city</p>
+                        </div>
+                        <div class="inputs-row">
+                            <div class="input-container">
+                                <select name="country" class="input-field input-required" title="Country">
+                                    <option disabled selected>Country</option>
+                                </select>
+                                <img src="images/bottom-arrow.svg" alt="" class="input-img">
+                                <p class="input-tooltip">Please enter shipping country</p>
+                            </div>
+                            <div class="input-container input-row-small">
+                                <input type="text" name="zip" class="input-field input-required" placeholder="ZIP"
+                                       title="ZIP">
+                                <p class="input-tooltip">Please enter shipping ZIP</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-slide-button">
+                        <button type="button" class="btn">Continue</button>
                     </div>
                 </div>
-                <div class="form-slide payment"></div>
+                <div class="form-slide payment ">
+                    <div class="form-slide-title">
+                        <span class="form-slide-title-text font-purple">Payment</span>
+                    </div>
+                    <div class="form-slide-description">
+                        <img src="images/secure-payment.svg" alt="">
+                        <p>This is a secure 128-bit SSL encrypted payment</p>
+                    </div>
+                    <div class="fieldset">
+                        <div class="fieldset-title font-purple">
+                            Cardholder Name
+                        </div>
+                        <div class="input-container">
+                            <input type="text" name="full-name" class="input-field input-required"
+                                   placeholder="Name as it appears on your card"
+                                   title="Name as it appears on your card">
+                            <p class="input-tooltip">Please enter the name of your card</p>
+                        </div>
+                    </div>
+                    <div class="fieldset">
+                        <div class="fieldset-title font-purple">
+                            Card Number
+                        </div>
+                        <div class="input-container">
+                            <input type="number" name="card-number" class="input-field input-required"
+                                   placeholder="XXXX XXXX XXXX XXXX XXXX" title="Card Number">
+                            <p class="input-tooltip">Please enter your card numbers</p>
+                        </div>
+                    </div>
+                    <div class="inputs-row">
+                        <div>
+                            <div class="fieldset-title font-purple">
+                                Expire Date
+                            </div>
+                            <div class="input-container">
+                                <input type="number" id="datemax" name="datemax" class="input-field input-required"
+                                       max="1979-12-31" placeholder="MM / YY">
+                                <p class="input-tooltip">Please enter your card expire date</p>
+                            </div>
+                        </div>
+                        <div class="input-row-small">
+                            <div class="fieldset-title font-purple">
+                                Security Code
+                            </div>
+                            <div class="input-container">
+                                <input type="password" name="security-code" class="input-field input-required"
+                                       title="Security Code">
+                                <p class="input-tooltip">Please enter your security code</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-slide-button">
+                        <button type="submit" class="btn">Pay Securely</button>
+                    </div>
+                </div>
             </form>
         </div>
         <div class="order-content">
