@@ -369,6 +369,10 @@ a {
 
 }
 
+.input-warning {
+    background: burlywood;
+}
+
 .input-tooltip {
     font-size: 13px;
     line-height: 16px;
