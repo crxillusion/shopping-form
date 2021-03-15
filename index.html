@@ -45,10 +45,10 @@
                         </div>
                         <div class="input-container">
                             <input type="text"
-                                   name="full-name"
+                                   name="shipping-full-name"
                                    class="input-field input-required"
                                    placeholder="Full Name"
-                                   title="Full Name"
+                                   title="Full Name" data-copy="full-name"
                             >
                             <p class="input-tooltip">
                                 Please enter recipient full name
@@ -73,10 +73,11 @@
                         </div>
                         <div class="input-container">
                             <input type="text"
-                                   name="street-address"
+                                   name="shipping-street-address"
                                    class="input-field input-required"
                                    placeholder="Street Address"
                                    title="Street Address"
+                                   data-copy="street-address"
                             >
                             <p class="input-tooltip">
                                 Please enter shipping street address
@@ -84,18 +85,20 @@
                         </div>
                         <div class="input-container">
                             <input type="text"
-                                   name="apt"
+                                   name="shipping-apt"
                                    class="input-field"
                                    placeholder="Apt, Suite, Bldg, Gate Code. (optional)"
                                    title="Apt, Suite, Bldg, Gate Code. (optional)"
+                                   data-copy="apt"
                             >
                         </div>
                         <div class="input-container">
                             <input type="text"
-                                   name="city"
+                                   name="shipping-city"
                                    class="input-field input-required"
                                    placeholder="City"
                                    title="City"
+                                   data-copy="city"
                             >
                             <img src="images/city-target.svg" alt="" class="input-img">
                             <p class="input-tooltip">
@@ -104,9 +107,10 @@
                         </div>
                         <div class="inputs-row">
                             <div class="input-container">
-                                <select name="country"
+                                <select name="shipping-country"
                                         class="input-field input-required"
                                         title="Country"
+                                        data-copy="country"
                                 >
                                     <option disabled selected value="">Country</option>
                                     <option value="Armenia">Armenia</option>
@@ -118,10 +122,11 @@
                             </div>
                             <div class="input-container input-row-small">
                                 <input type="text"
-                                       name="zip"
+                                       name="shipping-zip"
                                        class="input-field input-required"
                                        placeholder="ZIP"
                                        title="ZIP"
+                                       data-copy="zip"
                                 >
                                 <p class="input-tooltip">
                                     Please enter shipping ZIP
@@ -136,15 +141,15 @@
                 <div data-slide="billing" class="form-slide billing-info ">
                     <div class="form-slide-title">
                         <span class="form-slide-title-text font-purple">Billing Information</span>
-                        <a href="#" class="title-link font-purple">Same as shipping</a>
+                        <a href="#" class="title-link font-purple" id="copy-data">Same as shipping</a>
                     </div>
                     <div class="fieldset">
                         <div class="fieldset-title font-purple">
                             Billing Contact
                         </div>
                         <div class="input-container">
-                            <input type="text" name="full-name" class="input-field input-required"
-                                   placeholder="Full Name" title="Full Name">
+                            <input type="text" name="billing-full-name" class="input-field input-required"
+                                   placeholder="Full Name" title="Full Name" data-paste="full-name">
                             <p class="input-tooltip">Please enter recipient full name</p>
                         </div>
                         <div class="input-container">
@@ -158,24 +163,30 @@
                             Billing Address
                         </div>
                         <div class="input-container">
-                            <input type="text" name="street-address" class="input-field input-required"
-                                   placeholder="Street Address" title="Street Address">
+                            <input type="text" name="billing-street-address" class="input-field input-required"
+                                   placeholder="Street Address" title="Street Address" data-paste="street-address">
                             <p class="input-tooltip">Please enter shipping street address</p>
                         </div>
                         <div class="input-container">
-                            <input type="text" name="apt" class="input-field"
+                            <input type="text" name="billing-apt" class="input-field"
                                    placeholder="Apt, Suite, Bldg, Gate Code. (optional)"
-                                   title="Apt, Suite, Bldg, Gate Code. (optional)">
+                                   title="Apt, Suite, Bldg, Gate Code. (optional)"
+                                   data-paste="apt"
+                            >
                         </div>
                         <div class="input-container">
-                            <input type="text" name="city" class="input-field input-required" placeholder="City"
-                                   title="City">
+                            <input type="text" name="billing-city" class="input-field input-required" placeholder="City"
+                                   title="City"
+                                   data-paste="city"
+                            >
                             <img src="images/city-target.svg" alt="" class="input-img">
                             <p class="input-tooltip">Please enter shipping city</p>
                         </div>
                         <div class="inputs-row">
                             <div class="input-container">
-                                <select name="country" class="input-field input-required" title="Country">
+                                <select name="billing-country" class="input-field input-required" title="Country"
+                                data-paste="country"
+                                >
                                     <option disabled selected value="">Country</option>
                                     <option value="Armenia">Armenia</option>
                                 </select>
@@ -183,8 +194,11 @@
                                 <p class="input-tooltip">Please enter shipping country</p>
                             </div>
                             <div class="input-container input-row-small">
-                                <input type="text" name="zip" class="input-field input-required" placeholder="ZIP"
-                                       title="ZIP">
+                                <input type="text" name="billing-zip" class="input-field input-required"
+                                       placeholder="ZIP"
+                                       title="ZIP"
+                                       data-paste="zip"
+                                >
                                 <p class="input-tooltip">Please enter shipping ZIP</p>
                             </div>
                         </div>
