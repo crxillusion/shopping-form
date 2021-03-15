@@ -1,5 +1,6 @@
 let btns = document.querySelectorAll(".btn");
 let inputs = document.querySelectorAll(".input-required");
+let slideOrder = ['shipping', 'billing', 'payment'];
 
 btns.forEach(function (b, i) {
     b.addEventListener('click', btnClickHandler);
@@ -15,7 +16,6 @@ inputs.forEach(function (inp) {
     })
 })
 
-
 function btnClickHandler(e) {
     e.preventDefault();
     let slide = this.closest('.form-slide');
@@ -30,11 +30,36 @@ function btnClickHandler(e) {
     })
 
     let firstEmpty = slide.querySelector('.input-warning');
-    let tooltip = firstEmpty.closest(".input-container").querySelector('.input-tooltip');
-    if (tooltip) {
-        tooltip.classList.add("visible");
+    // Եթե դատարկ input կա -> ցույց տուր tooltip-ը
+    if (firstEmpty != null) {
+        let tooltip = firstEmpty.closest(".input-container").querySelector('.input-tooltip');
+        if (tooltip) {
+            tooltip.classList.add("visible");
+        }
+    } else {
+        openNextSlide();
     }
-
-
 }
 
+function openNextSlide() {
+    let currentVisible = document.querySelector('.form-slide.visible');
+    if (currentVisible == null) {
+        console.log("No any visible slides");
+        return;
+    }
+    let slide = currentVisible.dataset.slide;
+    let index = slideOrder.indexOf(slide);
+    if (slideOrder[index + 1] !== undefined) {
+        let nextSlide = document.querySelector(`[data-slide="${slideOrder[index + 1]}"]`);
+        if (nextSlide !== null) {
+            currentVisible.classList.remove('visible');
+            nextSlide.classList.add('visible');
+
+            let nextSlideNav = document.querySelector(`[data-slide-nav="${slideOrder[index + 1]}"]`);
+            if (nextSlideNav !== null) {
+                document.querySelector(`[data-slide-nav="${slide}"]`).classList.remove('font-purple');
+                nextSlideNav.classList.add('font-purple');
+            }
+        }
+    }
+}
