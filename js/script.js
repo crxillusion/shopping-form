@@ -8,11 +8,7 @@ btns.forEach(function (b, i) {
 
 inputs.forEach(function (inp) {
     inp.addEventListener('input', function () {
-        inp.classList.remove('input-warning');
-        let tooltip = inp.closest(".input-container").querySelector('.input-tooltip');
-        if (tooltip) {
-            tooltip.classList.remove("visible");
-        }
+        removeWarning(inp);
     })
 })
 
@@ -24,11 +20,19 @@ copyBtn.addEventListener('click', function () {
             let pasteInput = document.querySelector(`[data-paste="${copyName}"]`);
             if (pasteInput !== null) {
                 pasteInput.value = input.value;
+                removeWarning(pasteInput);
             }
         }
     })
 })
 
+function removeWarning(inp) {
+    inp.classList.remove('input-warning');
+    let tooltip = inp.closest(".input-container").querySelector('.input-tooltip');
+    if (tooltip) {
+        tooltip.classList.remove("visible");
+    }
+}
 
 function btnClickHandler(e) {
     e.preventDefault();
