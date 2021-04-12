@@ -2,6 +2,7 @@ let btns = document.querySelectorAll(".btn");
 let inputs = document.querySelectorAll(".input-required");
 let slideOrder = ['shipping', 'billing', 'payment'];
 let copyBtn = document.querySelector('#copy-data');
+
 btns.forEach(function (b, i) {
     b.addEventListener('click', btnClickHandler);
 });
@@ -81,3 +82,43 @@ function openNextSlide() {
         }
     }
 }
+
+function getCountries() {
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://api.first.org/data/v1/countries');
+    xhr.send();
+
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            let countries = JSON.parse(xhr.response);
+            if (countries.data !== undefined) {
+                countries = countries.data;
+                fillCountries(countries);
+            }
+        }
+    }
+}
+
+function fillCountries(data) {
+    let countrySelect = document.querySelectorAll('.country-select');
+    countrySelect.forEach(function (select) {
+        for (let countryCode in data) {
+            let option = new Option(data[countryCode].country, data[countryCode].country);
+            select.append(option);
+        }
+    })
+    toggleLoading(false);
+}
+
+function toggleLoading(show) {
+    let loading = document.querySelector('.loader');
+    if (show) {
+        loading.classList.remove('hide');
+    } else {
+        loading.classList.add('hide');
+    }
+}
+
+window.addEventListener('load', function () {
+    getCountries();
+})

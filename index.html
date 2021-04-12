@@ -108,12 +108,11 @@
                         <div class="inputs-row">
                             <div class="input-container">
                                 <select name="shipping-country"
-                                        class="input-field input-required"
+                                        class="input-field input-required country-select"
                                         title="Country"
                                         data-copy="country"
                                 >
                                     <option disabled selected value="">Country</option>
-                                    <option value="Armenia">Armenia</option>
                                 </select>
                                 <img src="images/bottom-arrow.svg" alt="" class="input-img">
                                 <p class="input-tooltip">
@@ -184,11 +183,11 @@
                         </div>
                         <div class="inputs-row">
                             <div class="input-container">
-                                <select name="billing-country" class="input-field input-required" title="Country"
-                                data-paste="country"
+                                <select name="billing-country" class="input-field input-required country-select"
+                                        title="Country"
+                                        data-paste="country"
                                 >
                                     <option disabled selected value="">Country</option>
-                                    <option value="Armenia">Armenia</option>
                                 </select>
                                 <img src="images/bottom-arrow.svg" alt="" class="input-img">
                                 <p class="input-tooltip">Please enter shipping country</p>
@@ -347,7 +346,9 @@
         </div>
     </div>
 </main>
-
+<div class="loader">
+    <img src="images/loading.gif" alt="loading" class="loading-img">
+</div>
 <script src="js/script.js"></script>
 </body>
 </html>
