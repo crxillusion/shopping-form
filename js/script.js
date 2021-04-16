@@ -2,6 +2,11 @@ let btns = document.querySelectorAll(".btn");
 let inputs = document.querySelectorAll(".input-required");
 let slideOrder = ['shipping', 'billing', 'payment'];
 let copyBtn = document.querySelector('#copy-data');
+let cityImgs = document.querySelectorAll('.get-city');
+let userData = {
+    city: null,
+    country: null
+};
 
 btns.forEach(function (b, i) {
     b.addEventListener('click', btnClickHandler);
@@ -25,6 +30,10 @@ copyBtn.addEventListener('click', function () {
             }
         }
     })
+})
+
+cityImgs.forEach(function (img) {
+    img.addEventListener('click', getUserCity);
 })
 
 function removeWarning(inp) {
@@ -85,7 +94,7 @@ function openNextSlide() {
 
 function getCountries() {
     let xhr = new XMLHttpRequest();
-    xhr.open('GET', 'https://api.first.org/data/v1/countries');
+    xhr.open('GET', 'https://api.first.org/data/v1/countries?limit=300');
     xhr.send();
 
     xhr.onload = function () {
@@ -106,8 +115,10 @@ function fillCountries(data) {
             let option = new Option(data[countryCode].country, data[countryCode].country);
             select.append(option);
         }
-    })
-    toggleLoading(false);
+    });
+    setTimeout(function () {
+        toggleLoading(false);
+    }, 2000);
 }
 
 function toggleLoading(show) {
@@ -117,6 +128,52 @@ function toggleLoading(show) {
     } else {
         loading.classList.add('hide');
     }
+}
+
+function getUserCity() {
+    let slide = this.closest('.form-slide');
+    slide = slide.dataset.slide;
+    if (userData.city == null && userData.country == null) {
+        navigator.geolocation.getCurrentPosition(
+            function (data) {
+                getLocation(data.coords.latitude, data.coords.longitude, slide);
+            },
+            function () {
+                console.log("error");
+            })
+    } else {
+        setCity(userData.city, slide);
+        setCountry(userData.country, slide);
+    }
+}
+
+function getLocation(lat, long, slide) {
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET',
+        `https://api.opencagedata.com/geocode/v1/json?key=042f896117d94d93913ebe09f7309de4&q=${lat}+${long}&pretty=1`)
+    xhr.send();
+
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            let data = JSON.parse(xhr.response);
+            let city = data.results[0].components.city;
+            let country = data.results[0].components.country;
+            setCity(city, slide);
+            setCountry(country, slide);
+            userData.city = city;
+            userData.country = country;
+        }
+    }
+}
+
+function setCity(city, slide) {
+    let input = document.querySelector(`[name='${slide}-city']`);
+    input.value = city;
+}
+
+function setCountry(country, slide) {
+    let select = document.querySelector(`[name='${slide}-country']`);
+    select.value = country;
 }
 
 window.addEventListener('load', function () {
